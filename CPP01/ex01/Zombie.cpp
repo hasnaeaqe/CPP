@@ -1,6 +1,7 @@
 #include "Zombie.hpp"
 
-Zombie::Zombie() {
+Zombie::Zombie() :name(""){
+     std::cout << "Zombie created (default)" << std::endl;
 }
 
 Zombie::~Zombie()
