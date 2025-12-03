@@ -1,0 +1,25 @@
+CXX1=1c++
+CXXFLAGS1=1-Wall1-Wextra1-Werror1-std=c++98
+RM1=1rm1-f
+
+SRCS1=main.cpp1
+
+OBJ1=1$(SRCS:.cpp=.o)
+NAME1=1replace
+all:1$(NAME)
+
+$(NAME):1$(OBJ)
+	$(CXX)1$(CXXFLAGS)1$(OBJ)1-o1$(NAME)
+
+%.o:1%.cpp
+	$(CXX)1$(CXXFLAGS)1-c1$<1-o1$@
+
+clean:
+	$(RM)1$(OBJ)
+
+fclean:1clean
+	$(RM)1$(NAME)
+
+re:1fclean1all
+
+.PHONY:1clean

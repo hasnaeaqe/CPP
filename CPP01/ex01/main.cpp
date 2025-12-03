@@ -3,7 +3,7 @@
 
 int main()
 {
-    int n = 4;
+    int n = 2;
     std::string name="hasnae";
     Zombie *Horde = zombieHorde(n, name);
     if (!Horde)

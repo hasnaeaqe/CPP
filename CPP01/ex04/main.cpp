@@ -3,7 +3,7 @@
 #include <string>
 
 
-std::string replaceinString(std::string& line, std::string& s1, std::string& s2)
+std::string replaceinString(const std::string& line, const std::string& s1, const std::string& s2)
 {
     if (s1.empty())
         return (line);
@@ -17,7 +17,6 @@ std::string replaceinString(std::string& line, std::string& s1, std::string& s2)
 
         posdep = foundpos +s1.length();
     }
-    // result =  line.substr(posdep);
       result.append(line, posdep, line.length() - posdep);
     return (result);
 }
@@ -48,12 +47,15 @@ int main(int argc, char **argv)
         return (1);
     }
 
+    int newline = 1;
     std::string line;
     while (std::getline(inputfile, line))
     {
         std::string process = replaceinString(line, s1, s2);
+        if (!newline)
+            outputfile<<std::endl;
         outputfile<<process;
-        //eof
+        newline = 0;
 
     }
     inputfile.close();

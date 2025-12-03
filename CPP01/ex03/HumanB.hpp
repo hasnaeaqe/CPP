@@ -9,6 +9,6 @@ public:
     HumanB(std::string name);
     ~HumanB();
     void attack();
-    void setWeapon(Weapon weapon);
+    void setWeapon(Weapon& weapon);
 };
 
