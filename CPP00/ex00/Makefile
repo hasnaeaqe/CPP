@@ -1,5 +1,5 @@
-CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+CC = c++
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -f
 
 SRCS = megaphone.cpp
@@ -11,11 +11,11 @@ NAME = megaphone
 all: $(NAME)
 
 $(NAME): $(OB)
-	$(CXX) $(CXXFLAGS) $(OB) -o $(NAME)
+	$(CC) $(CFLAGS) $(OB) -o $(NAME)
 
 
 %.o: %.cpp
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	$(RM)  $(OB) 
