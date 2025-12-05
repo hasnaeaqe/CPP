@@ -9,7 +9,10 @@ HumanB::~HumanB()
 
 void HumanB::attack()
 {
-    std::cout<<name<<"  attacks with their "<<weapon->getType()<<std::endl;
+    if(weapon)
+        std::cout<<name<<"  attacks with their "<<weapon->getType()<<std::endl;
+    else
+        std::cout<<"Weapon don't exist"<<std::endl;
 }
 
 void HumanB::setWeapon(Weapon& weapon)

@@ -7,7 +7,7 @@ std::string replaceinString(const std::string& line, const std::string& s1, cons
 {
     if (s1.empty())
         return (line);
-    std::string result;
+    std::string result = "";
     size_t posdep = 0;
     size_t foundpos;
     while ((foundpos= line.find(s1, posdep)) != std::string::npos)
@@ -40,7 +40,7 @@ int main(int argc, char **argv)
     }
 
     std::string outfile = filename+".replace";
-    std::ofstream outputfile(outfile .c_str());
+    std::ofstream outputfile(outfile.c_str());
     if (!outputfile.is_open())
     {
         std::cout<<"Error while opening the file out!"<<std::endl;
