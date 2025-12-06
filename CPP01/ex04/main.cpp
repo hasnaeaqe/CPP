@@ -47,15 +47,11 @@ int main(int argc, char **argv)
         return (1);
     }
 
-    int newline = 1;
     std::string line;
-    while (std::getline(inputfile, line))
+    while (std::getline(inputfile, line,'\0'))
     {
         std::string process = replaceinString(line, s1, s2);
-        if (!newline)
-            outputfile<<std::endl;
-        outputfile<<process;
-        newline = 0;
+        outputfile<<process;;
 
     }
     inputfile.close();
