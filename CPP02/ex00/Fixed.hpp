@@ -8,12 +8,13 @@ class Fixed
 {
     private:
         int fixed_point;
-        static const int num_frac;
+        static const int fractionalBits = 8;
     public:
         Fixed();
-        //copy contrs
-        //copy assignemen=nt overload
+        Fixed(const Fixed& autre);
+        Fixed& operator=(const Fixed& autre);
         ~Fixed();
+        
         int getRawBits( void ) const;
         void setRawBits( int const raw );
 };
