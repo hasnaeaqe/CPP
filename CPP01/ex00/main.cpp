@@ -7,5 +7,4 @@ int main()
     delete z;
     randomChump("stack");
     return (0);
-
 }

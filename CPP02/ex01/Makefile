@@ -2,17 +2,17 @@ CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -f
 
-SRCS =  main.cpp 
+SRCS = Fixed.cpp  main.cpp 
 
 OBJ = $(SRCS:.cpp=.o)
-NAME = a.out
+NAME = Fixed
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
-%.o: %.cpp
+%.o: %.cpp Fixed.hpp
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:

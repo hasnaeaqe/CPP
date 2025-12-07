@@ -2,11 +2,10 @@ CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -f
 
-SRCS =  main.cpp 
+SRCS =main.cpp 
 
 OBJ = $(SRCS:.cpp=.o)
-NAME = a.out
-
+NAME = replace
 all: $(NAME)
 
 $(NAME): $(OBJ)
