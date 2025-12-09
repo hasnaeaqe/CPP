@@ -9,7 +9,7 @@ class Fixed
 {
     private:
         int fixed_point;
-        static const int fractionalBits; //maybe this en c++!11 attentiooon hsnaaae zwwena
+        static const int fractionalBits;
     public:
         Fixed();
         Fixed(const int value);

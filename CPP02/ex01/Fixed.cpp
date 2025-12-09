@@ -38,22 +38,22 @@ Fixed::~Fixed()
 Fixed :: Fixed(const int value)
 {
     std::cout<<"Int constructor called"<<std::endl;
-    fixed_point = value<<fractionalBits;
+    fixed_point = value * ( 1 << fractionalBits); //<<frac
 }
 Fixed ::Fixed(const float value)
 {
     std::cout<<"Float constructor called"<<std::endl;
-    fixed_point = roundf(value *(1<<fractionalBits));
+    fixed_point = roundf(value * ( 1 << fractionalBits));
 }
 
 float Fixed::toFloat( void ) const
 {
-    return (float)this->fixed_point/(1<<fractionalBits);
+    return (float)fixed_point / ( 1 << fractionalBits );
     
 }
 int Fixed::toInt( void ) const
 {
-    return this->fixed_point>>fractionalBits;
+    return fixed_point / ( 1 << fractionalBits );
 }
 std::ostream& operator<<(std::ostream& out, const Fixed& fixed)
 {
