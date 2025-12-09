@@ -48,12 +48,12 @@ Fixed ::Fixed(const float value)
 
 float Fixed::toFloat( void ) const
 {
-    return (float)this->fixed_point/(1<<fractionalBits);
+    return static_cast<float>(fixed_point)/(1<<fractionalBits);
     
 }
 int Fixed::toInt( void ) const
 {
-    return this->fixed_point>>fractionalBits;
+    return fixed_point>>fractionalBits;
 }
 std::ostream& operator<<(std::ostream& out, const Fixed& fixed)
 {
@@ -75,17 +75,22 @@ Fixed Fixed::operator-(const Fixed& autre) const
     result.fixed_point = fixed_point - autre.fixed_point;
     return(result);
 }
+
 Fixed Fixed::operator*(const Fixed& autre) const
 {
     Fixed result;
-    result.fixed_point = (fixed_point * autre.fixed_point)>>fractionalBits; //   divie /256
+    long long mult = (long long)fixed_point * (long long)autre.fixed_point; //je dois verifier l overflow ?? jsp hemm
+    result.fixed_point = static_cast<int>(mult >> fractionalBits);  //casting omme ca ???
+    
     return(result);
 }
+
 Fixed Fixed::operator/(const Fixed& autre) const
 {
     Fixed result;
+    long long div = fixed_point << fractionalBits;
     if (autre.fixed_point != 0)
-        result.fixed_point = (fixed_point / autre.fixed_point) << fractionalBits; //*256
+        result.fixed_point = static_cast<int>(div / autre.fixed_point);
     return(result);
 }
 
@@ -122,7 +127,7 @@ Fixed Fixed::operator++(int)
 }
 Fixed& Fixed::operator++()
 {
-    fixed_point += 1;
+    fixed_point += 1;  //
     return *this;
 }
 

@@ -9,7 +9,7 @@ class Fixed
 {
     private:
         int fixed_point;
-        static const int fractionalBits; //maybe this en c++!11 attentiooon hsnaaae zwwena
+        static const int fractionalBits;
     public:
         Fixed();
         Fixed(const int value);
@@ -28,7 +28,6 @@ class Fixed
 
         Fixed operator+(const Fixed& autre) const;
         Fixed operator-(const Fixed& autre) const;
-        // a verifir  overflooow 
         Fixed operator*(const Fixed& autre) const;
         Fixed operator/(const Fixed& autre) const;
 
