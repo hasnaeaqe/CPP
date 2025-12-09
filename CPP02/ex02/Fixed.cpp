@@ -38,7 +38,7 @@ Fixed::~Fixed()
 Fixed :: Fixed(const int value)
 {
     // std::cout<<"Int constructor called"<<std::endl;
-    fixed_point = value<<fractionalBits;
+    fixed_point = value<<fractionalBits;///////////////////////////////
 }
 Fixed ::Fixed(const float value)
 {
@@ -53,7 +53,7 @@ float Fixed::toFloat( void ) const
 }
 int Fixed::toInt( void ) const
 {
-    return fixed_point>>fractionalBits;
+    return fixed_point>>fractionalBits;/////////////////////////
 }
 std::ostream& operator<<(std::ostream& out, const Fixed& fixed)
 {
@@ -61,22 +61,21 @@ std::ostream& operator<<(std::ostream& out, const Fixed& fixed)
     return out;
 }
 
-
-
-Fixed Fixed::operator+(const Fixed& autre) const
+//return (Fixed (Fixed(this->toFloat() + other.toFloat())));
+Fixed Fixed::operator+(const Fixed& autre)
 {
     Fixed result;
     result.fixed_point = fixed_point + autre.fixed_point;
     return(result);
 }
-Fixed Fixed::operator-(const Fixed& autre) const
+Fixed Fixed::operator-(const Fixed& autre)
 {
     Fixed result;
     result.fixed_point = fixed_point - autre.fixed_point;
     return(result);
 }
 
-Fixed Fixed::operator*(const Fixed& autre) const
+Fixed Fixed::operator*(const Fixed& autre)
 {
     Fixed result;
     long long mult = (long long)fixed_point * (long long)autre.fixed_point; //je dois verifier l overflow ?? jsp hemm
@@ -85,7 +84,7 @@ Fixed Fixed::operator*(const Fixed& autre) const
     return(result);
 }
 
-Fixed Fixed::operator/(const Fixed& autre) const
+Fixed Fixed::operator/(const Fixed& autre)
 {
     Fixed result;
     long long div = fixed_point << fractionalBits;
@@ -94,27 +93,27 @@ Fixed Fixed::operator/(const Fixed& autre) const
     return(result);
 }
 
-bool Fixed::operator<(const Fixed& autre) const
+bool Fixed::operator<(const Fixed& autre)
 {
     return (fixed_point < autre.fixed_point);
 }
-bool Fixed::operator<=(const Fixed& autre) const
+bool Fixed::operator<=(const Fixed& autre)
 {
     return (fixed_point <= autre.fixed_point);
 }
-bool Fixed::operator>(const Fixed& autre) const
+bool Fixed::operator>(const Fixed& autre)
 {
     return (fixed_point > autre.fixed_point);
 }
-bool Fixed::operator>=(const Fixed& autre) const
+bool Fixed::operator>=(const Fixed& autre)
 {
     return (fixed_point >= autre.fixed_point);
 }
-bool Fixed::operator==(const Fixed& autre) const
+bool Fixed::operator==(const Fixed& autre)
 {
     return (fixed_point == autre.fixed_point);
 }
-bool Fixed::operator!=(const Fixed& autre) const
+bool Fixed::operator!=(const Fixed& autre)
 {
     return (fixed_point != autre.fixed_point);
 }
@@ -125,15 +124,32 @@ Fixed Fixed::operator++(int)
     fixed_point += 1;
     return (val);
 }
-Fixed& Fixed::operator++()
+Fixed Fixed::operator++()   //sans &
 {
     fixed_point += 1;  //
-    return *this;
+    return *this; //()
 }
+Fixed Fixed::operator--( int )
+{
+    Fixed val = (*this);
+    fixed_point -= 1;
+    return (val);
+}  
+Fixed Fixed::operator--( void )
+{
+    fixed_point -= 1;  //
+    return *this;
+    
+}
+
+//     if (one.toFloat() > two.toFloat())
+//         return (two);
+//     else
+//         return (one);
 
 Fixed& Fixed::min(Fixed& val1, Fixed& val2)
 {
-    return (val1 < val2)?val1: val2;
+    return (val1 < val2) ? val1 : val2;
 }
 const Fixed& Fixed::min(const Fixed& val1, const Fixed& val2)
 {

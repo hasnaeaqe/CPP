@@ -26,20 +26,24 @@ class Fixed
         int getRawBits( void ) const;
         void setRawBits( int const raw );
 
-        Fixed operator+(const Fixed& autre) const;
-        Fixed operator-(const Fixed& autre) const;
-        Fixed operator*(const Fixed& autre) const;
-        Fixed operator/(const Fixed& autre) const;
+        Fixed operator+(const Fixed& autre) ;
+        Fixed operator-(const Fixed& autre) ;
+        Fixed operator*(const Fixed& autre) ;
+        Fixed operator/(const Fixed& autre) ;
 
-        bool operator<(const Fixed& autre) const;
-        bool operator<=(const Fixed& autre) const;
-        bool operator>(const Fixed& autre) const;
-        bool operator>=(const Fixed& autre) const;
-        bool operator==(const Fixed& autre) const;
-        bool operator!=(const Fixed& autre) const;
+        bool operator<(const Fixed& autre) ;
+        bool operator<=(const Fixed& autre) ;
+        bool operator>(const Fixed& autre) ;
+        bool operator>=(const Fixed& autre) ;
+        bool operator==(const Fixed& autre) ;
+        bool operator!=(const Fixed& autre) ;
 
-        Fixed operator++(int);
-        Fixed& operator++();
+            // name
+        Fixed operator++( int );
+        Fixed operator--( int );  
+        
+        Fixed operator++( void );
+        Fixed operator--( void );
 
         static Fixed& min(Fixed& val1, Fixed& val2);
         static const Fixed& min(const Fixed& val1, const Fixed& val2);
