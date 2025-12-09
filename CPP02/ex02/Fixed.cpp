@@ -93,7 +93,7 @@ Fixed Fixed::operator/(const Fixed& autre)
     return(result);
 }
 
-bool Fixed::operator<(const Fixed& autre)
+bool Fixed::operator<(const Fixed& autre) const //pour min const 
 {
     return (fixed_point < autre.fixed_point);
 }
@@ -101,7 +101,7 @@ bool Fixed::operator<=(const Fixed& autre)
 {
     return (fixed_point <= autre.fixed_point);
 }
-bool Fixed::operator>(const Fixed& autre)
+bool Fixed::operator>(const Fixed& autre) const //max const
 {
     return (fixed_point > autre.fixed_point);
 }

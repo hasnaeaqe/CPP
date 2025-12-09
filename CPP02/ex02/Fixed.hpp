@@ -31,9 +31,9 @@ class Fixed
         Fixed operator*(const Fixed& autre) ;
         Fixed operator/(const Fixed& autre) ;
 
-        bool operator<(const Fixed& autre) ;
+        bool operator<(const Fixed& autre) const;
         bool operator<=(const Fixed& autre) ;
-        bool operator>(const Fixed& autre) ;
+        bool operator>(const Fixed& autre) const;
         bool operator>=(const Fixed& autre) ;
         bool operator==(const Fixed& autre) ;
         bool operator!=(const Fixed& autre) ;
