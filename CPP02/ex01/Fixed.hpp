@@ -14,14 +14,13 @@ class Fixed
         Fixed();
         Fixed(const int value);
         Fixed(const float value);
+        Fixed(const Fixed& autre);
+        ~Fixed();
+        
+        Fixed& operator=(const Fixed& autre);
 
         float toFloat( void ) const;
         int toInt( void ) const;
-
-        Fixed(const Fixed& autre);
-        Fixed& operator=(const Fixed& autre);
-        ~Fixed();
-        
 
         int getRawBits( void ) const;
         void setRawBits( int const raw );

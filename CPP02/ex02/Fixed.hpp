@@ -19,13 +19,14 @@ class Fixed
         int toInt( void ) const;
 
         Fixed(const Fixed& autre);
-        Fixed& operator=(const Fixed& autre);
         ~Fixed();
         
-
+        
         int getRawBits( void ) const;
         void setRawBits( int const raw );
-
+        
+        Fixed& operator=(const Fixed& autre);
+        
         Fixed operator+(const Fixed& autre) ;
         Fixed operator-(const Fixed& autre) ;
         Fixed operator*(const Fixed& autre) ;
