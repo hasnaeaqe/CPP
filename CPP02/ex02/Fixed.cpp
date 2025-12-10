@@ -33,8 +33,6 @@ std::ostream& operator<<(std::ostream& out, const Fixed& fixed)
     return out;
 }
 
-//return (Fixed (Fixed(this->toFloat() + other.toFloat())));
-
 Fixed Fixed::operator+(const Fixed& autre)
 {
     Fixed result;
@@ -86,7 +84,7 @@ Fixed Fixed::operator++(int)
     return (val);
 }
 
-Fixed Fixed::operator++()   //sans &
+Fixed& Fixed::operator++(void)   //sans &
 {
     fixed_point += 1;  //
     return *this; //()
@@ -98,7 +96,7 @@ Fixed Fixed::operator--( int )
     fixed_point -= 1;
     return (val);
 }  
-Fixed Fixed::operator--( void )
+Fixed& Fixed::operator--( void )
 {
     fixed_point -= 1;  //
     return *this;

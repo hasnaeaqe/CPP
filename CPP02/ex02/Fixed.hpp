@@ -26,7 +26,7 @@ class Fixed
         void setRawBits( int const raw );
         
         Fixed& operator=(const Fixed& autre);
-        
+
         Fixed operator+(const Fixed& autre) ;
         Fixed operator-(const Fixed& autre) ;
         Fixed operator*(const Fixed& autre) ;
@@ -43,8 +43,8 @@ class Fixed
         Fixed operator++( int );
         Fixed operator--( int );  
         
-        Fixed operator++( void );
-        Fixed operator--( void );
+        Fixed& operator++( void );
+        Fixed& operator--( void );
 
         static Fixed& min(Fixed& val1, Fixed& val2);
         static const Fixed& min(const Fixed& val1, const Fixed& val2);
