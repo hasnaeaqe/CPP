@@ -6,7 +6,7 @@ Fixed::Fixed():fixed_point(0){}
 
 Fixed::Fixed(const Fixed& autre){fixed_point = autre.fixed_point;}
 
-Fixed :: Fixed(const int value){fixed_point = value * (1 <<fractionalBits);}
+Fixed :: Fixed(const int value){this->setRawBits(value * (1 <<fractionalBits));}
 
 Fixed ::Fixed(const float value){fixed_point = roundf(value *(1<<fractionalBits));}
 
@@ -16,7 +16,7 @@ int Fixed:: getRawBits( void ) const {return fixed_point;}
 
 void Fixed::setRawBits( int const raw ){this->fixed_point = raw;}
 
-float Fixed::toFloat( void ) const{return static_cast<float>(fixed_point)/(1<<fractionalBits);} //float
+float Fixed::toFloat( void ) const{return (float)(fixed_point)/(1<<fractionalBits);}
 
 int Fixed::toInt( void ) const{return fixed_point / (1 << fractionalBits);}
 
@@ -49,32 +49,30 @@ Fixed Fixed::operator-(const Fixed& autre)
 
 Fixed Fixed::operator*(const Fixed& autre)
 {
-    Fixed result;
-    long long mult = (long long)fixed_point * (long long)autre.fixed_point; //je dois verifier l overflow ?? jsp hemm
-    result.fixed_point = static_cast<int>(mult >> fractionalBits);  //casting omme ca ???
-    return(result);
+    return(Fixed(this->toFloat()*autre.toFloat()));
 }
 
 Fixed Fixed::operator/(const Fixed& autre)
 {
-    Fixed result;
-    long long div = fixed_point << fractionalBits;
-    if (autre.fixed_point != 0)
-        result.fixed_point = static_cast<int>(div / autre.fixed_point);
-    return(result);
+    if (autre.fixed_point == 0)
+    {
+        std::cout<<"Error: division by 0 "<<std::endl;
+        return (Fixed(0));
+    }
+    return(Fixed(this->toFloat()/autre.toFloat()));
 }
 
 bool Fixed::operator<(const Fixed& autre) const  {return (fixed_point < autre.fixed_point);}
 
-bool Fixed::operator<=(const Fixed& autre){return (fixed_point <= autre.fixed_point);}
+bool Fixed::operator<=(const Fixed& autre)  const {return (fixed_point <= autre.fixed_point);}
 
 bool Fixed::operator>(const Fixed& autre) const {return (fixed_point > autre.fixed_point);}
 
-bool Fixed::operator>=(const Fixed& autre){return (fixed_point >= autre.fixed_point);}
+bool Fixed::operator>=(const Fixed& autre)  const {return (fixed_point >= autre.fixed_point);}
 
-bool Fixed::operator==(const Fixed& autre){return (fixed_point == autre.fixed_point);}
+bool Fixed::operator==(const Fixed& autre)  const {return (fixed_point == autre.fixed_point);}
 
-bool Fixed::operator!=(const Fixed& autre){return (fixed_point != autre.fixed_point);}
+bool Fixed::operator!=(const Fixed& autre)  const {return (fixed_point != autre.fixed_point);}
 
 
 Fixed Fixed::operator++(int)
@@ -84,29 +82,25 @@ Fixed Fixed::operator++(int)
     return (val);
 }
 
-Fixed& Fixed::operator++(void)   //sans &
-{
-    fixed_point += 1;  //
-    return *this; //()
-}
-
 Fixed Fixed::operator--( int )
 {
     Fixed val = (*this);
     fixed_point -= 1;
     return (val);
 }  
-Fixed& Fixed::operator--( void )
+
+Fixed& Fixed::operator++()
 {
-    fixed_point -= 1;  //
+    fixed_point += 1;
+    return *this; 
+}
+
+Fixed& Fixed::operator--()
+{
+    fixed_point -= 1; 
     return *this;
     
 }
-
-//     if (one.toFloat() > two.toFloat())
-//         return (two);
-//     else
-//         return (one);
 
 Fixed& Fixed::min(Fixed& val1, Fixed& val2){return (val1 < val2) ? val1 : val2;}
 

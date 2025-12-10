@@ -20,6 +20,7 @@ Fixed ::Fixed(const float value)
     std::cout<<"Float constructor called"<<std::endl;
     fixed_point = roundf(value * ( 1 << fractionalBits));
 }
+
 Fixed::~Fixed(){std::cout<<"Destructor called"<<std::endl;}
 
 int Fixed:: getRawBits( void ) const
@@ -27,12 +28,13 @@ int Fixed:: getRawBits( void ) const
     std::cout<<"getRawBits member function called"<<std::endl;
     return fixed_point;
 }
-void Fixed::setRawBits( int const raw ){this->fixed_point = raw;}
+
+void Fixed::setRawBits( int const raw ) {this->fixed_point = raw;}
 
 
-float Fixed::toFloat( void ) const{return (float)fixed_point / ( 1 << fractionalBits );}
+float Fixed::toFloat( void ) const {return (float)fixed_point / ( 1 << fractionalBits );}
 
-int Fixed::toInt( void ) const{return fixed_point / ( 1 << fractionalBits );}
+int Fixed::toInt( void ) const {return fixed_point / ( 1 << fractionalBits );}
 
 Fixed& Fixed::operator=(const Fixed& autre)
 {

@@ -33,18 +33,19 @@ class Fixed
         Fixed operator/(const Fixed& autre) ;
 
         bool operator<(const Fixed& autre) const;
-        bool operator<=(const Fixed& autre) ;
+        bool operator<=(const Fixed& autre) const;
         bool operator>(const Fixed& autre) const;
-        bool operator>=(const Fixed& autre) ;
-        bool operator==(const Fixed& autre) ;
-        bool operator!=(const Fixed& autre) ;
+        bool operator>=(const Fixed& autre) const;
+        bool operator==(const Fixed& autre) const;
+        bool operator!=(const Fixed& autre) const;
 
-            // name
+        // "opérateur post-incrémentation"
         Fixed operator++( int );
         Fixed operator--( int );  
         
-        Fixed& operator++( void );
-        Fixed& operator--( void );
+        // "opérateur pré-incrémentation"
+        Fixed& operator++();
+        Fixed& operator--();
 
         static Fixed& min(Fixed& val1, Fixed& val2);
         static const Fixed& min(const Fixed& val1, const Fixed& val2);
