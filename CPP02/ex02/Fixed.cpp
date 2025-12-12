@@ -1,6 +1,5 @@
 #include "Fixed.hpp"
 
-const int Fixed::fractionalBits=8;
 
 Fixed::Fixed():fixed_point(0){}
 
@@ -33,26 +32,26 @@ std::ostream& operator<<(std::ostream& out, const Fixed& fixed)
     return out;
 }
 
-Fixed Fixed::operator+(const Fixed& autre)
+Fixed Fixed::operator+(const Fixed& autre) const
 {
     Fixed result;
     result.fixed_point = fixed_point + autre.fixed_point;
     return(result);
 }
 
-Fixed Fixed::operator-(const Fixed& autre)
+Fixed Fixed::operator-(const Fixed& autre) const
 {
     Fixed result;
     result.fixed_point = fixed_point - autre.fixed_point;
     return(result);
 }
 
-Fixed Fixed::operator*(const Fixed& autre)
+Fixed Fixed::operator*(const Fixed& autre) const
 {
     return(Fixed(this->toFloat()*autre.toFloat()));
 }
 
-Fixed Fixed::operator/(const Fixed& autre)
+Fixed Fixed::operator/(const Fixed& autre) const
 {
     if (autre.fixed_point == 0)
     {

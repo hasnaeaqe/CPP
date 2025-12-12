@@ -1,9 +1,6 @@
 #include "Fixed.hpp"
 
 int main( void ) {
-// Fixed c(42.42f);
-// std::cout << "Float: " << c.toFloat() << std::endl;
-// std::cout << "Int: " << c.toInt() << std::endl;  // Devrait afficher "42"
 
 
     Fixed a;
