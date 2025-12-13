@@ -29,7 +29,7 @@ void ClapTrap::setAttackDamage(unsigned int attackDamage){ this->attackDamage = 
 
 void ClapTrap::attack(const std::string& target)
 {
-    if (hitPoints <= 0 || energyPoints <= 0)
+    if (hitPoints <= 0 || energyPoints <= 0) //check ==0 il est nsigned int 
         std::cout<<"Can't attack"<<std::endl;
     else
     {
@@ -40,7 +40,7 @@ void ClapTrap::attack(const std::string& target)
 }
 void ClapTrap::takeDamage(unsigned int amount)
 {
-    if (amount <= hitPoints)
+    if (amount <= hitPoints) ///a verifier 
         hitPoints = hitPoints - amount;
     else
     {
@@ -52,7 +52,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 }
 void ClapTrap::beRepaired(unsigned int amount)
 {
-     if (hitPoints <= 0 || energyPoints <= 0)
+     if (hitPoints <= 0 || energyPoints <= 0) // check only the energy points
         std::cout<<"Can't be repaired"<<std::endl;
     hitPoints = hitPoints + amount;
     if(energyPoints > 0)
