@@ -53,7 +53,10 @@ void ClapTrap::takeDamage(unsigned int amount)
 void ClapTrap::beRepaired(unsigned int amount)
 {
      if (hitPoints <= 0 || energyPoints <= 0) // check only the energy points
-        std::cout<<"Can't be repaired"<<std::endl;
+     {
+         std::cout<<"Can't be repaired"<<std::endl;
+          return ;
+     }
     hitPoints = hitPoints + amount;
     if(energyPoints > 0)
         energyPoints--;
