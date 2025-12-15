@@ -3,8 +3,8 @@
 
 int main()
 {
-    ClapTrap a;
-    ClapTrap b;
+    ClapTrap a("hasnae");
+    ClapTrap b("oki");
 
     ScavTrap s("SCAV");
     ScavTrap p("Trap");
@@ -27,4 +27,5 @@ int main()
     FragTrap ab(f);
     ab.operator=(f);
 
+    return 0;
 }
