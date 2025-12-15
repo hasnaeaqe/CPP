@@ -5,7 +5,7 @@ RM = rm -f
 SRCS = ClapTrap.cpp  main.cpp ScavTrap.cpp FragTrap.cpp
 
 OBJ = $(SRCS:.cpp=.o)
-NAME = ClapTrap
+NAME = FragTrap
 
 all: $(NAME)
 

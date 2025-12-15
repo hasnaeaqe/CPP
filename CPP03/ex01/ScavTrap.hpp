@@ -14,4 +14,5 @@ class ScavTrap:public ClapTrap{
         void attack(const std::string& target);
 };
 
+
 #endif
