@@ -23,3 +23,9 @@ Cat& Cat::operator=(const Cat& autre)
 }
 
 Cat::~Cat(){std::cout<<"Cat's destructor called"<<std::endl;}
+
+
+void Cat::makeSound() const
+{
+   std::cout<<"Cat make ..."<<std::endl; 
+}

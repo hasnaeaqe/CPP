@@ -12,6 +12,9 @@ class Cat:public Animal
         Cat(const Cat& autre);
         Cat& operator=(const Cat& autre);
         ~Cat();
+
+        virtual void makeSound() const;
+
 };
 
 
