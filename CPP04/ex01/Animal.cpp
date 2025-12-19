@@ -1,18 +1,18 @@
 #include "Animal.hpp"
 
 Animal::Animal():type("")
-{std::cout<<"Animal's Default constructer called"<<std::endl;}
+{std::cout<<"Animal's Default constructor called"<<std::endl;}
 Animal::Animal(std::string type):type(type)
-{std::cout<<"Animal's  constructer with params called"<<std::endl;}
+{std::cout<<"Animal's  constructor with params called"<<std::endl;}
 
 Animal::Animal(const Animal& autre)
 {
-    std::cout<<"Animal's copy constructer called"<<std::endl;
+    std::cout<<"Animal's copy constructor called"<<std::endl;
     type = autre.type;
 }
 Animal& Animal::operator=(const Animal& autre)
 {
-    std::cout<<"Animal's copy assignement operator  called"<<std::endl;
+    std::cout<<"Animal's constructor copy assignmentoperator  called"<<std::endl;
     if (this != &autre)
         type = autre.type;
     return (*this);

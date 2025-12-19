@@ -21,6 +21,13 @@ int main()
     std::cout << k->getType() << " " << std::endl;
     k->makeSound(); //will output the cat sound!
     meta1->makeSound();
-    // ...?
+
+
+    delete meta;
+    delete j;
+    delete i;
+    delete meta1;
+    delete k;
+
     return 0;
-    }
+}
