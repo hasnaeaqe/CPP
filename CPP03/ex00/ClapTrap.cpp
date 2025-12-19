@@ -28,11 +28,6 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& autre)
 }
 ClapTrap::~ClapTrap(){ std::cout<<"ClapTrap's Destructor Called for "<< name<<std::endl; }
 
-
-unsigned int ClapTrap::getAttackDamage() const {return (attackDamage);}
-void ClapTrap::setAttackDamage(unsigned int attackDamage){ this->attackDamage = attackDamage;}
-
-
 void ClapTrap::attack(const std::string& target)
 {
     if (hitPoints == 0)

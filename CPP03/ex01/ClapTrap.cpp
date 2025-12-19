@@ -3,8 +3,6 @@
 
 ClapTrap::ClapTrap():name(""),hitPoints(10),energyPoints(10), attackDamage(0)
 { std::cout<<"ClapTrap's Default Constructor Called for "<<name<<std::endl;}
-ClapTrap::ClapTrap(std::string name, unsigned int hitPoints, unsigned int energyPoints, unsigned int attackDamage):name(name),hitPoints(hitPoints),energyPoints(energyPoints), attackDamage(attackDamage)
-{ std::cout<<"ClapTrap's Constructor with params Called for "<<name<<std::endl;}
 
 ClapTrap::ClapTrap(std::string name):name(name),hitPoints(10),energyPoints(10), attackDamage(0)
 { std::cout<<"ClapTrap's Constructor with params name Called for "<<name<<std::endl;}
@@ -30,11 +28,6 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& autre)
     return (*this);
 }
 ClapTrap::~ClapTrap(){ std::cout<<"ClapTrap's Destructor Called for "<< name<<std::endl; }
-
-
-unsigned int ClapTrap::getAttackDamage() const {return (attackDamage);}
-void ClapTrap::setAttackDamage(unsigned int attackDamage){ this->attackDamage = attackDamage;}
-
 
 void ClapTrap::attack(const std::string& target)
 {

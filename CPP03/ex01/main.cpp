@@ -2,6 +2,13 @@
 
 int main()
 {
+    std::cout << "===== TEST CLAPTRAP =====" << std::endl;
+    ClapTrap clap("hasnae");
+    clap.attack("Targuuet");
+    clap.takeDamage(5);
+    clap.beRepaired(3);
+    
+    std::cout << "\n===== TEST SCAVTRAP =====" << std::endl;
     std::cout << "\n=== Creating ScavTrap ===" << std::endl;
     ScavTrap guard("Hasnae");
     
@@ -14,6 +21,5 @@ int main()
     std::cout << "\n=== Testing copy ===" << std::endl;
     ScavTrap copy(guard);
     
-    std::cout << "\n=== End of scope (destructors called) ===" << std::endl;
     return 0;
 }
