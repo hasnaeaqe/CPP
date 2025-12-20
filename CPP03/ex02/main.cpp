@@ -3,29 +3,32 @@
 
 int main()
 {
-    ClapTrap a("hasnae");
-    ClapTrap b("oki");
+    std::cout << "\n===== TEST CLAPTRAP =====" << std::endl;
+    ClapTrap clap("hasnae");
+    clap.attack("Targuuet");
+    clap.takeDamage(5);
+    clap.beRepaired(3);
 
+    std::cout << "\n===== TEST SCAVTRAP =====" << std::endl;
     ScavTrap s("SCAV");
     ScavTrap p("Trap");
 
-    s.setAttackDamage(6);
     s.attack("P");
-    p.takeDamage(s.getAttackDamage());
+    p.takeDamage(40);
     p.beRepaired(15);
     s.guardGate();
 
+    std::cout << "\n===== TEST FRAGTRAP =====" << std::endl;
     FragTrap f("fatiha");
     FragTrap ABC("imane");
 
     f.attack("ABC");
-    ABC.takeDamage(f.getAttackDamage());
+    ABC.takeDamage(30);
     ABC.beRepaired(10);
     
     f.highFivesGuys();
 
     FragTrap ab(f);
-    ab.operator=(f);
 
     return 0;
 }
