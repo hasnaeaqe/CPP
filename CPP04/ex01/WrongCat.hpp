@@ -5,13 +5,12 @@
 
 class WrongCat:public WrongAnimal
 {
-    private:
-        std::string name;
     public:
         WrongCat();
         WrongCat(const WrongCat& autre);
         WrongCat& operator=(const WrongCat& autre);
         ~WrongCat();
+        
         void makeSound() const;
 };
 

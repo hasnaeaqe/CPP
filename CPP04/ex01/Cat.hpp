@@ -8,13 +8,12 @@
 class Cat:public Animal
 {
     private:
-        std::string name;
         Brain* brain;
     public:
         Cat();
         Cat(const Cat& autre);
         Cat& operator=(const Cat& autre);
-        ~Cat();
+        virtual ~Cat();
 
         virtual void makeSound() const;
 

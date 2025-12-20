@@ -27,13 +27,13 @@ Dog& Dog::operator=(const Dog& autre)
     return (*this);
 }
 
+void Dog::makeSound() const
+{
+   std::cout<<"Dog maked Woof! Woof! ..."<<std::endl; 
+}
+
 Dog::~Dog()
 {
     delete brain;
     std::cout<<"Dog's destructor called"<<std::endl;
-}
-
-void Dog::makeSound() const
-{
-   std::cout<<"Dog maked Woof! Woof! ..."<<std::endl; 
 }

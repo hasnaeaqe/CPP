@@ -27,14 +27,14 @@ Cat& Cat::operator=(const Cat& autre)
     return (*this);
 }
 
+void Cat::makeSound() const
+{
+   std::cout<<"Cat makes Meow! Meow! ..."<<std::endl; 
+}
+
 Cat::~Cat()
 {
     delete brain;
     std::cout<<"Cat's destructor called"<<std::endl;
 }
 
-
-void Cat::makeSound() const
-{
-   std::cout<<"Cat makes Meow! Meow! ..."<<std::endl; 
-}

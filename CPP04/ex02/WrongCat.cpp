@@ -1,9 +1,8 @@
 #include "WrongCat.hpp"
 
-WrongCat::WrongCat():WrongAnimal("WrongCat")
+WrongCat::WrongCat():WrongAnimal("WrongCat"), name("WrongCat1")
 {   
     std::cout<<"WrongCat's Default constructer called"<<std::endl;
-    name = "WrongCat1";
 }
 
 WrongCat::WrongCat(const WrongCat& autre): WrongAnimal(autre)
@@ -22,9 +21,9 @@ WrongCat& WrongCat::operator=(const WrongCat& autre)
     return (*this);
 }
 
-WrongCat::~WrongCat(){std::cout<<"WrongCat's destructor called"<<std::endl;}
-
 void WrongCat::makeSound() const
 {
    std::cout<<"Wrong cat makes a wrong sound"<<std::endl; 
 }
+
+WrongCat::~WrongCat(){std::cout<<"WrongCat's destructor called"<<std::endl;}

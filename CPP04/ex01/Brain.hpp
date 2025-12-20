@@ -12,7 +12,6 @@ class Brain
         Brain(const Brain& autre);
         Brain& operator=(const Brain& autre);
         ~Brain();
-
 };
 
 
