@@ -1,12 +1,10 @@
-#ifndef WrongCat_HPP
-#define WrongCat_HPP
+#ifndef WRONGCAT_HPP
+#define WRONGCAT_HPP
 
 #include "WrongAnimal.hpp"
 
 class WrongCat:public WrongAnimal
 {
-    private:
-        std::string name;
     public:
         WrongCat();
         WrongCat(const WrongCat& autre);
