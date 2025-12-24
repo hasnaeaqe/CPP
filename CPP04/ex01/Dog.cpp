@@ -27,7 +27,19 @@ Dog& Dog::operator=(const Dog& autre)
 
 void Dog::makeSound() const
 {
-   std::cout<<"Dog maked Woof! Woof! ..."<<std::endl; 
+   std::cout<<"Dog makes Woof! Woof! ..."<<std::endl; 
+}
+
+void Dog::setBrainIdea(int index, const std::string& idea)
+{
+    if (brain)
+       brain->setIdea(index, idea);
+}
+std::string Dog::getBrainIdea(int index) const
+{
+    if (brain)
+        return brain->getIdea(index);
+    return "";
 }
 
 Dog::~Dog()

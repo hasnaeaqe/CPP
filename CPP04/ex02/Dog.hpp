@@ -7,7 +7,6 @@
 class Dog:public Animal
 {
     private:
-        std::string name;
         Brain* brain;
     public:
         Dog();
@@ -15,7 +14,10 @@ class Dog:public Animal
         Dog& operator=(const Dog& autre);
         ~Dog();
 
-        void makeSound() const ;      
+        void makeSound() const ;     
+        
+        void setBrainIdea(int index, const std::string& idea);
+        std::string getBrainIdea(int index) const;
 };
 
 

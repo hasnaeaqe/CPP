@@ -17,6 +17,8 @@ class Cat:public Animal
 
         void makeSound() const;
 
+        void setBrainIdea(int index, const std::string& idea);
+        std::string getBrainIdea(int index) const;
 };
 
 

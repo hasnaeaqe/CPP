@@ -11,21 +11,21 @@ int main()
     const Animal* i = new Cat();
     std::cout << j->getType() << " " << std::endl;
     std::cout << i->getType() << " " << std::endl;
-    i->makeSound(); //will output the cat sound!
+    i->makeSound();
     j->makeSound();
     meta->makeSound();
-
-    std::cout<<"\n\n";
-    const WrongAnimal* meta1 = new WrongAnimal();
-    const WrongAnimal* k = new WrongCat();
-    std::cout << k->getType() << " " << std::endl;
-    k->makeSound(); //will output the cat sound!
-    meta1->makeSound();
-
-
+    
     delete meta;
     delete j;
     delete i;
+
+    std::cout << "\n\n=== WRONG ANIMAL TEST ===" << std::endl;
+    const WrongAnimal* meta1 = new WrongAnimal();
+    const WrongAnimal* k = new WrongCat();
+    std::cout << k->getType() << " " << std::endl;
+    k->makeSound();
+    meta1->makeSound();
+    
     delete meta1;
     delete k;
 

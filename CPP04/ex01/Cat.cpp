@@ -29,6 +29,18 @@ void Cat::makeSound() const
    std::cout<<"Cat makes Meow! Meow! ..."<<std::endl; 
 }
 
+void Cat::setBrainIdea(int index, const std::string& idea)
+{
+    if (brain)
+       brain->setIdea(index, idea);
+}
+std::string Cat::getBrainIdea(int index) const
+{
+    if (brain)
+        return brain->getIdea(index);
+    return "";
+}
+
 Cat::~Cat()
 {
     delete brain;

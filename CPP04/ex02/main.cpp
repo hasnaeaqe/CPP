@@ -6,34 +6,21 @@
 
 int main()
 {
-    // const Animal* meta = new Animal();  //abstract
-    Animal *tab[10];
-    for (int i=0; i<5; i++)
-    {
-        tab[i] = new Dog();
+    const Animal* j = new Dog();
+    const Animal* i = new Cat();
+    
+    delete j;
+    delete i;
+    
+    Animal *tab[2];
+    tab[0] = new Dog();
+    tab[1] = new Cat();
 
-    }
-    for (int i=5; i<10; i++)
-    {
-        tab[i] = new Cat();
-
-    }
-    // const Animal* j = new Dog();
-    // const Animal* i = new Cat();
-    // delete j;//should not create a leak
-    // delete i;
-    // // ...
-    Dog* dogorg = new Dog();
-    Dog* dogcopie = new Dog(*dogorg);
-
-    delete dogorg;
-    delete dogcopie;
-
-
-    for (int i=0; i<10;i++)
+    for (int i = 0; i<2; i++)
     {
         delete tab[i];
-
     }
+    
     return 0;
+   
 }

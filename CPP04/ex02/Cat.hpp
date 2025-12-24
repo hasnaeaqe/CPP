@@ -8,7 +8,6 @@
 class Cat:public Animal
 {
     private:
-        std::string name;
         Brain* brain;
     public:
         Cat();
@@ -17,6 +16,9 @@ class Cat:public Animal
         ~Cat();
 
         void makeSound() const ;
+
+        void setBrainIdea(int index, const std::string& idea);
+        std::string getBrainIdea(int index) const;
 
 };
 
