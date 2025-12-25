@@ -2,12 +2,12 @@
 
 Dog::Dog():Animal("Dog")
 {   
-    std::cout<<"Dog's Default constructer called"<<std::endl;
+    std::cout<<"Dog's Default constructor called"<<std::endl;
 }
 
 Dog::Dog(const Dog& autre): Animal(autre)
 {
-    std::cout<<"Dog's copy constructer called"<<std::endl;
+    std::cout<<"Dog's copy constructor called"<<std::endl;
 }
 Dog& Dog::operator=(const Dog& autre)
 {

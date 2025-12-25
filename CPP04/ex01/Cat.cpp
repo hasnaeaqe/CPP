@@ -10,7 +10,6 @@ Cat::Cat(const Cat& autre): Animal(autre)
 {
     std::cout<<"Cat's copy constructor called"<<std::endl;
     brain = new Brain(*autre.brain);
-
 }
 Cat& Cat::operator=(const Cat& autre)
 {

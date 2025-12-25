@@ -12,7 +12,12 @@ int main()
     delete i;
 
     std::cout << "\n=== array test ===" << std::endl;
-    int size = 10;
+    int size = 1000000;
+    if (size <= 0 || size > 100000)
+    {
+        std::cout<<"Error: size must be positive and in range"<<std::endl;
+        return (1);
+    }
     Animal* tab[size];
     
     for (int i = 0; i < size; i++)

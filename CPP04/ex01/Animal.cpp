@@ -2,17 +2,16 @@
 
 Animal::Animal():type("default")
 {
-    std::cout<<"Animal's Default constructer called"<<std::endl;
+    std::cout<<"Animal's Default constructor called"<<std::endl;
 }
 Animal::Animal(std::string type):type(type)
 {
-    std::cout<<"Animal's  constructer with params called"<<std::endl;
+    std::cout<<"Animal's  constructor with params called"<<std::endl;
 }
 
-Animal::Animal(const Animal& autre)
+Animal::Animal(const Animal& autre):type(autre.type)
 {
-    std::cout<<"Animal's copy constructer called"<<std::endl;
-    type = autre.type;
+    std::cout<<"Animal's copy constructor called"<<std::endl;
 }
 Animal& Animal::operator=(const Animal& autre)
 {

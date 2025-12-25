@@ -2,17 +2,17 @@
 
 WrongAnimal::WrongAnimal():type("default")
 {
-    std::cout<<"WrongAnimal's Default constructer called"<<std::endl;
+    std::cout<<"WrongAnimal's Default constructor called"<<std::endl;
 }
 
 WrongAnimal::WrongAnimal(std::string type):type(type)
 {
-    std::cout<<"WrongAnimal's  constructer with params called"<<std::endl;
+    std::cout<<"WrongAnimal's  constructor with params called"<<std::endl;
 }
 
 WrongAnimal::WrongAnimal(const WrongAnimal& autre)
 {
-    std::cout<<"WrongAnimal's copy constructer called"<<std::endl;
+    std::cout<<"WrongAnimal's copy constructor called"<<std::endl;
     type = autre.type;
 }
 WrongAnimal& WrongAnimal::operator=(const WrongAnimal& autre)

@@ -2,12 +2,12 @@
 
 Cat::Cat():Animal("Cat")
 {   
-    std::cout<<"Cat's Default constructer called"<<std::endl;
+    std::cout<<"Cat's Default constructor called"<<std::endl;
 }
 
 Cat::Cat(const Cat& autre): Animal(autre)
 {
-    std::cout<<"Cat's copy constructer called"<<std::endl;
+    std::cout<<"Cat's copy constructor called"<<std::endl;
 }
 Cat& Cat::operator=(const Cat& autre)
 {
